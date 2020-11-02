@@ -7,8 +7,8 @@
     "dev": "ts-node-dev --poll src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "postbuild": "cpy **/* !**/*.ts ../dist --cwd=src --no-overwrite --parents",
-    "prebuild": "del-cli dist/"
+    "postbuild": "cpy '**/*' '!**/*.ts' ../dist --cwd=src --no-overwrite --parents",
+    "prebuild": "del dist/"
   },
   "author": "",
   "license": "ISC",
