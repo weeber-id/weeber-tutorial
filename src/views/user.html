@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+    <style>
+      .table-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .table-row:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="table">
+      <div class="table-row">
+        <div class="table-head">Id</div>
+        <div class="table-head">Name</div>
+        <div class="table-head">Email</div>
+      </div>
+      {{ELEMENT}}
+    </div>
+  </body>
+</html>
