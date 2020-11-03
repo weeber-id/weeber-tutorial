@@ -6,12 +6,14 @@ const router = express.Router();
 
 router.post('/user', async (req, res) => {
   const { name, email } = req.body;
+  console.log(req.body);
+
   if (!name) {
-    res.status(400).send({ message: 'Please provide name field' });
+    return res.status(400).send({ message: 'Please provide name field' });
   }
 
   if (!email) {
-    res.status(400).send({ message: 'Please provide email field' });
+    return res.status(400).send({ message: 'Please provide email field' });
   }
 
   try {
@@ -29,7 +31,7 @@ router.post('/user', async (req, res) => {
     });
   } catch (err) {
     console.error(err.detail);
-    res.send({ message: err.detail });
+    res.status(400).send({ message: err.detail });
   }
 });
 
