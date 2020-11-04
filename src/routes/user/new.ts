@@ -6,7 +6,13 @@ const router = express.Router();
 
 router.post('/user', async (req, res) => {
   const { name, email } = req.body;
-  console.log(req.body);
+
+  if (!req.headers['content-type'].startsWith('application/json'))
+    return res.status(400).send({
+      message:
+        'Content Type must be application/json not ' +
+        req.headers['content-type'],
+    });
 
   if (!name) {
     return res.status(400).send({ message: 'Please provide name field' });
